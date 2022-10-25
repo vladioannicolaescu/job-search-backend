@@ -3,7 +3,6 @@ import base64
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from flask.json import jsonify
-from waitress import serve
 
 app = Flask(__name__)
 CORS(app)
@@ -86,6 +85,11 @@ def company_logo(jwt, hashId):
 
     return {"img": response.text, "status": response.status_code}
 
+
+@app.route('/')
+def index():
+    return "Germany Job Search API"
+
 @app.route('/job-search')
 def api_job_search():
     what = request.args.get('what', None)
@@ -113,4 +117,4 @@ def api_job_search():
 
 
 if __name__ == '__main__':
-    serve(app, host="0.0.0.0", port=5000)
+    app.run()
