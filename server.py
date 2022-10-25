@@ -3,11 +3,9 @@ import base64
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from flask.json import jsonify
-from flask_frozen import Freezer
 
 app = Flask(__name__)
 CORS(app)
-freezer = Freezer(app)
 
 def get_jwt():
     headers = {
@@ -112,5 +110,4 @@ def api_job_search():
 
 
 if __name__ == '__main__':
-    # app.run()
-    freezer.freeze()
+    app.run()
