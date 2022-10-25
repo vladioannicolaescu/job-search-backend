@@ -1,4 +1,3 @@
-appdirs==1.4.4
 Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
 Flask-Cors==3.0.10
 freezer==13.0.0
