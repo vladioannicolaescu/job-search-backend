@@ -62,7 +62,8 @@ def job_details(jwt, job_ref):
     }
 
     response = requests.get(
-        f'https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v2/jobdetails/{(base64.b64encode(job_ref.encode())).decode("UTF-8")}',
+        'https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v2/jobdetails/{}'.format(
+            (base64.b64encode(job_ref.encode())).decode("UTF-8")),
         headers=headers, verify=False)
 
     return response.json()
@@ -79,7 +80,8 @@ def company_logo(jwt, hashId):
     }
     
     response = requests.get(
-        f'https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/ed/v1/arbeitgeberlogo/{hashId}',
+        'https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/ed/v1/arbeitgeberlogo/{}'.format(
+            hashId),
         headers=headers, verify=False)
 
     return {"img": response.text, "status": response.status_code}
