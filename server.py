@@ -3,9 +3,11 @@ import base64
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from flask.json import jsonify
+from flask_frozen import Freezer
 
 app = Flask(__name__)
 CORS(app)
+freezer = Freezer(app)
 
 def get_jwt():
     headers = {
@@ -83,13 +85,12 @@ def company_logo(jwt, hashId):
 
     return {"img": response.text, "status": response.status_code}
 
-
 @app.route('/job-search')
 def api_job_search():
     what = request.args.get('what', None)
     where = request.args.get('where', None)
     industry = request.args.get('industry', None)
-    jobtype = request.args.get('type', None)
+    jobtype = request.args.get('type', 1)
     page_no = request.args.get('page_no', 1)
     page_size = request.args.get('page_size', 10)
     
@@ -111,4 +112,5 @@ def api_job_search():
 
 
 if __name__ == '__main__':
-    app.run()
+    # app.run()
+    freezer.freeze()
