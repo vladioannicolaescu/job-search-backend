@@ -94,7 +94,6 @@ importlib-metadata==5.0.0
 importlib-resources==5.10.0
 iniconfig @ file:///home/linux1/recipes/ci/iniconfig_1610983019677/work
 intervaltree @ file:///tmp/build/80754af9/intervaltree_1598376443606/work
-ipykernel @ file:///tmp/build/80754af9/ipykernel_1596207638929/work/dist/ipykernel-5.3.4-py3-none-any.whl
 ipython @ file:///tmp/build/80754af9/ipython_1617120885885/work
 ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
 ipywidgets @ file:///tmp/build/80754af9/ipywidgets_1610481889018/work
